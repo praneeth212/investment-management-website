@@ -1,0 +1,55 @@
+﻿@model Managament.Models.HomeViewModel
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load initial data
+            loadChartData(@Html.Raw(ViewBag.DataPoints));
+
+            // Set up button click handlers
+            $(".fund-button").click(function () {
+                var fundId = $(this).data("fund-id");
+                loadFundData(fundId);
+            });
+        });
+
+        function loadChartData(dataPoints) {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Nav Value"
+                },
+                axisX: {
+                    valueFormatString: "DD MMM"
+                },
+                axisY: {
+                    title: "Nav Values",
+                    prefix: "₹"
+                },
+                data: [{
+                    type: "spline",
+                    color: "#84c140",
+                    xValueType: "dateTime",
+                    xValueFormatString: "DD MMM",
+                    yValueFormatString: "₹#,###",
+                    dataPoints: dataPoints
+                }]
+            });
+            chart.render();
+        }
+
+        function loadFundData(fundId) {
+            $.getJSON("/Home/GetFundData", { fundId: fundId }, function (data) {
+                loadChartData(data);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+</body>
+</html>

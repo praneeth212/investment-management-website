@@ -1,0 +1,69 @@
+﻿@model Managament.Models.ModifyInvestmentViewModel
+
+@{
+    ViewData["Title"] = "Modify Investment";
+}
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow-sm" style="width: 100%; max-width: 500px; padding: 20px;">
+        <form asp-action="Modify" method="post">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.InvestmentId)
+
+            <!-- Title inside the form -->
+            <h2 class="text-center mb-4" style="color: #84c140;">Modify Investment</h2>
+
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label font-weight-bold"></label>
+                <input asp-for="StartDate" class="form-control" type="date" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="InvestmentType" class="control-label font-weight-bold"></label>
+                <select asp-for="InvestmentType" class="form-control" id="investmentType">
+                    <option value="">Select Investment Type</option>
+                    <option value="Lumpsum">Lumpsum</option>
+                    <option value="SIP">SIP</option>
+                </select>
+                <span asp-validation-for="InvestmentType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="frequencyField">
+                <label asp-for="Frequency" class="control-label font-weight-bold"></label>
+                <select asp-for="Frequency" class="form-control">
+                    <option value="">Select Frequency</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Quarterly">Quarterly</option>
+                </select>
+                <span asp-validation-for="Frequency" class="text-danger"></span>
+            </div>
+
+            <div class="form-group d-flex justify-content-between">
+                <button type="submit" class="btn-create-account"><i class="fas fa-save"></i> Save</button>
+                <a asp-action="Index" class="btn-login"><i class="fas fa-times"></i> Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var investmentTypeSelect = document.getElementById("investmentType");
+        var frequencyField = document.getElementById("frequencyField");
+
+        function toggleFrequencyField() {
+            frequencyField.style.display = investmentTypeSelect.value === "SIP" ? "block" : "none";
+        }
+
+        // Initial check
+        toggleFrequencyField();
+
+        // Add event listener to investment type select
+        investmentTypeSelect.addEventListener("change", toggleFrequencyField);
+    });
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

@@ -1,0 +1,58 @@
+﻿@model CreateTransactionViewModel
+
+@{
+    ViewData["Title"] = "Add Transaction";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-black" style="background-color: #84c140;">
+                    <h4 class="mb-0">Add Transaction</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="AddTransaction">
+                        <!-- Mutual Fund Name Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="MutualFundName" class="control-label"></label>
+                            <input asp-for="MutualFundName" class="form-control" readonly />
+                        </div>
+
+                        <!-- Current NAV Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="CurrentNav" class="control-label"></label>
+                            <input asp-for="CurrentNav" class="form-control" readonly />
+                        </div>
+
+                        <!-- Amount Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Amount" class="control-label"></label>
+                            <input asp-for="Amount" class="form-control" />
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+
+                        <!-- Transaction Type Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="TransactionType" class="control-label"></label>
+                            <input asp-for="TransactionType" class="form-control" readonly />
+                        </div>
+
+                        <!-- Hidden Investment Id Field -->
+                        <input type="hidden" asp-for="InvestmentId" />
+
+                        <!-- Submit Button -->
+                        <div class="form-group text-center">
+                            <input type="submit" value="Add Transaction" class="btn-create-account" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

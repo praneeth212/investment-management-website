@@ -1,0 +1,150 @@
+﻿@model Managament.Models.SupportRequestViewModel
+
+@{
+    ViewBag.Title = "Help Desk";
+}
+
+<!-- Add Bootstrap CSS for styling -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Add Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- Add custom CSS for additional styling -->
+<style>
+    /* Style for the custom button used in the form */
+    .btn-create-acc {
+        background-color: #000; /* Button background color */
+        border: 2px solid #84c140; /* Button border color */
+        color: #fff; /* Button text color */
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    .btn-create-acc:hover {
+        background-color: #000; /* Hover background color */
+        border-color: #fff; /* Hover border color */
+        color: #fff; /* Hover text color */
+    }
+
+    /* Style for the image section to cover the area */
+    .image-container img {
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        object-fit: cover; /* Cover the container without distortion */
+    }
+
+    /* Container styling for the form */
+    .form-container {
+        background-color: rgba(132, 193, 64,0.7); /* Light green background with opacity */
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        animation: fadeIn 1s ease-in-out; /* Fade in animation */
+        margin-top: 10px;
+    }
+
+    /* Header styling within the form container */
+    .form-header {
+        border-bottom: 2px solid #000; /* Bottom border for header */
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Title styling within the form header */
+    .form-title {
+        color: #000; /* Title color */
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+
+    /* Label styling for form controls */
+    .form-group label {
+        color: #333; /* Label color */
+        font-weight: bold;
+    }
+
+    /* Styling for form controls */
+    .form-control {
+        border-radius: 0.25rem; /* Rounded corners */
+    }
+
+    /* Style for the submit button in the form */
+    .btn-create-account {
+        background-color: #84c140; /* Button background color */
+        border-color: #84c140; /* Button border color */
+        color: #fff; /* Button text color */
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+    .btn-create-account:hover {
+        background-color: #6dbf2c; /* Hover background color */
+        border-color: #6dbf2c; /* Hover border color */
+    }
+
+    /* Keyframes for fade-in animation */
+    keyframes fadeIn {
+        from {
+            opacity: 0; /* Start from fully transparent */
+        }
+        to {
+            opacity: 1; /* End with full opacity */
+        }
+    }
+</style>
+
+<div class="container-fluid p-0">
+    <div class="row no-gutters">
+        <!-- Image Section: Displays a help desk image -->
+        <div class="col-md-6 p-0 image-container">
+            <img src="~/assets/Call center-bro.png" alt="Help Desk Image">
+        </div>
+        <!-- Form Section: Contains the support request form -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color:#fff;">
+            <div class="form-container w-75 animate__animated animate__fadeIn bg-opacity-50">
+                <div class="form-header text-center">
+                    <h2 class="form-title">Transact With Us</h2>
+                </div>
+                <div class="form-body">
+                    <!-- Icon to visually represent support -->
+                    <div class="text-center mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4230/4230745.png" alt="Support Icon" class="img-fluid" style="max-width:80px;" />
+                    </div>
+                    <!-- Form for submitting a support request -->
+                    <form asp-action="Create" method="post">
+                        <!-- Hidden field to store CustomerId -->
+                        <input type="hidden" asp-for="CustomerId" />
+
+                        <!-- Input for the subject of the support request -->
+                        <div class="form-group">
+                            <label asp-for="Subject" class="form-label">Subject</label>
+                            <input asp-for="Subject" class="form-control" placeholder="Enter subject" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        <!-- Textarea for the message of the support request -->
+                        <div class="form-group mt-3">
+                            <label asp-for="Message" class="form-label">Message</label>
+                            <textarea asp-for="Message" class="form-control" placeholder="Enter your message here..." rows="4"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        <!-- Submit button for the form -->
+                        <div class="form-group mt-4 text-center">
+                            <button type="submit" class="btn-create-acc btn-block">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!--  JavaScript libraries for Bootstrap functionality -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

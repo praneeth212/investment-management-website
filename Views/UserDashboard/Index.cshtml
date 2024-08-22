@@ -1,0 +1,226 @@
+﻿@model Managament.Models.UserDashboardViewModel
+
+@{
+    ViewBag.Title = "User Dashboard";
+}
+<!-- Add Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Add Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="~/assets/css/style.css">
+
+<style>
+    /* Recent Transactions Section */
+  
+    .pagination .page-item.active .page-link {
+        background-color: #84c140;
+        border-color: #84c140;
+    }
+
+    .pagination .page-link {
+        color: #84c140;
+    }
+
+        .pagination .page-link:hover {
+            background-color: #d4edda;
+            border-color: #d4edda;
+        }
+    /* Centering Main Content */
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Ensure Topbar is Full Width */
+    .topbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* Cards and Details Box */
+    .cardBox, .details {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .cardBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex: 1 1 calc(33.333% - 20px);
+        margin: 10px;
+        text-align: center;
+        font-size: 14px; /* Reduced font size */
+    }
+
+    .card .numbers {
+        font-size: 1.5em; /* Adjusted for smaller size */
+    }
+
+    /* Adjust for smaller screens */
+    media (max-width: 768px) {
+        .cardBox {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+
+    .card-fit {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        flex: 1 1 calc(33.333% - 20px);
+        margin: 10px;
+        text-align: center;
+        font-size: 1.7rem;
+        color: var(--black2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+        .card-fit:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+    /* Recent Orders and Investments */
+    .recentOrders, .recentCustomers {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .graphContainer {
+        margin-bottom: 20px;
+    }
+
+    /* Red color for negative profit/loss */
+    .negative {
+        color: red;
+    }
+ 
+</style>
+
+<!-- =============== Navigation ================ -->
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="title">My Porfolio</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Employee" asp-action="ForgotPassword">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Change Password</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Support" asp-action="create" asp-area="">
+                    <span class="icon">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Support</span>
+                </a>
+            </li>
+        </ul>
+        <div class="navigation-image">
+            <img src="~/assets/Growth analytics-bro.png" alt="Navigation Image">
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- User Dashboard Information -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">&#8377; @Model.InvestedAmount.ToString("N2")</div>
+                    <div class="cardName">Invested Amount</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- To Display Current Amount -->
+            <div class="card">
+                <div>
+                    <div class="numbers">&#8377; @Model.CurrentAmount.ToString("N2")</div>
+                    <div class="cardName">Current Amount</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                </div>
+            </div>
+                 <div class="card-fit">
+                    <div>
+                        <div class="numbers @(Model.ProfitLoss < 0 ? "negative" : "")">&#8377; @Model.ProfitLoss.ToString("N2")</div>
+                        <div class="cardName">Profit/Loss</div>
+                    </div>
+                    <div class="iconBx">
+                    <ion-icon name="trending-up-outline" style="font-size: 2em;"></ion-icon>
+                    </div>
+                </div>
+
+            <!-- Recent Transactions -->
+            <div class="details recentOrders">
+                <div class="cardHeader d-flex justify-content-between align-items-center">
+                    <h2 class="animate__animated animate__fadeIn">Recent Transactions</h2>
+                    <a asp-controller="Investments" class="btn btn-primary animate__animated animate__fadeIn">View All</a>
+                </div>
+                <div class="table-container">
+                    <table class="table table-hover table-striped table-custom">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Units</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var transaction in Model.RecentTransactions.Take(5))
+                            {
+                                <tr>
+                                    <td>@transaction.TransactionDate.ToString("MM/dd/yyyy")</td>
+                                    <td>@transaction.TransactionType</td>
+                                    <td>&#8377; @transaction.Amount.ToString("N2")</td>
+                                    <td>@transaction.Units</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- =========== Scripts =========  -->
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- ====== ionicons ======= -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Managament
+build_property.RootNamespace = Managament
+build_property.ProjectDir = C:\Users\localuser\Downloads\Managament (Final Draft 1)\Managament (Investments, Dashboard)\Managament (MF, Home)\Managament\Managament\Managament\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\localuser\Downloads\Managament (Final Draft 1)\Managament (Investments, Dashboard)\Managament (MF, Home)\Managament\Managament\Managament
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Employee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Employee/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Employee/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Employee/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Fund/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Investments/AddTransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0bWVudHNcQWRkVHJhbnNhY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Investments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0bWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Investments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Investments/Modify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0bWVudHNcTW9kaWZ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Investments/Redeem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0bWVudHNcUmVkZWVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/MutualFunds/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXV0dWFsRnVuZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/MutualFunds/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXV0dWFsRnVuZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Support/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/UserDashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckRhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/localuser/Downloads/Managament (Final Draft 1)/Managament (Investments\, Dashboard)/Managament (MF\, Home)/Managament/Managament/Managament/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yq8gslvydt

@@ -1,0 +1,144 @@
+﻿@using Managament.Models.Domain
+@using System.Globalization
+
+@model IEnumerable<InvestmentViewModel>
+
+@{
+    ViewData["Title"] = "Investments";
+    var cultureInfo = new CultureInfo("en-US"); // Change "en-US" to your desired culture
+    cultureInfo.NumberFormat.CurrencySymbol = "₹";
+}
+
+<h2 class="text-center my-4">Investments</h2>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .table thead {
+        background-color: #84c140;
+        color: white;
+    }
+
+    .table tbody tr {
+        border-bottom: 1px solid #84c140;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 8px;
+    }
+
+    .btn-redeem {
+        display: inline-flex;
+        align-items:center;
+        padding: 8px 16px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #dc3545;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-warning, .btn-primary, .btn-success {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .btn-redeem:hover {
+        color: #fff; /* Text color remains white on hover */
+        border: 1px solid #007bff; /* Border color remains unchanged */
+    }
+
+        .btn i, .btn-redeem ion-icon {
+            margin-right: 8px;
+        }
+
+       
+</style>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mutual Fund Name</th>
+            <th>Start Date</th>
+            <th>Amount Invested</th>
+            <th>Units Owned</th>
+            <th>Investment Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var investment in Model)
+        {
+            <tr>
+                <td>@investment.MutualFundName</td>
+                <td>@investment.StartDate.ToString("MM/dd/yyyy")</td>
+                <td>@investment.AmountInvested.ToString("C", cultureInfo)</td>
+                <td>@investment.UnitsOwned</td>
+                <td>@investment.InvestmentType</td>
+                <td>@(investment.IsActive ? "Active" : "Paused")</td>
+                <td>
+                    <div class="btn-group">
+                        @if (investment.InvestmentType == InvestmentType.Lumpsum)
+                        {
+                            if (investment.IsActive)
+                            {
+                                <form asp-action="Cancel" asp-route-investmentId="@investment.InvestmentId" method="post">
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </button>
+                                </form>
+                                <a asp-controller="Investments" asp-route-id="@investment.InvestmentId" asp-action="Modify" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i> Modify
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-controller="Investments" asp-route-investmentId="@investment.InvestmentId" asp-action="Redeem" class="btn btn-redeem" style="text-decoration: none;">
+                                    <ion-icon name="cash-outline"></ion-icon> Redeem
+                                </a>
+                            }
+                        }
+                        @if (investment.InvestmentType == InvestmentType.SIP)
+                        {
+                            if (investment.IsActive)
+                            {
+                                <form asp-action="Cancel" asp-route-investmentId="@investment.InvestmentId" method="post">
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </button>
+                                </form>
+                                <a asp-controller="Investments" asp-route-investmentId="@investment.InvestmentId" asp-action="AddTransaction" class="btn btn-success">
+                                    <i class="fas fa-money-bill-wave"></i> Make Payment
+                                </a>
+                                <a asp-controller="Investments" asp-route-id="@investment.InvestmentId" asp-action="Modify" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i> Modify
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-controller="Investments" asp-route-investmentId="@investment.InvestmentId" asp-action="Redeem" class="btn btn-redeem" style="text-decoration: none;">
+                                    <ion-icon name="cash-outline"></ion-icon> Redeem
+                                </a>
+                            }
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,169 @@
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Custom Toast Styles */
+.toast {
+    min-width: 300px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 1.1rem; /* Increase font size */
+    font-weight: 500; /* Increase font weight */
+}
+
+.toast-header {
+    background-color: transparent;
+}
+
+.toast-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb; /* Add border for better visibility */
+}
+
+.toast-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb; /* Add border for better visibility */
+}
+
+.toast-body {
+    color: inherit;
+}
+
+.toast-container {
+    position: fixed;
+    top: 90px; /* Adjust based on navbar height */
+    right: 20px;
+    z-index: 1050; /* Ensure toasts appear above other elements */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    /* White */
+}
+
+.navbar-brand {
+    color: #000000 !important;
+    /* Black */
+    font-weight: bold;
+    margin-left: 1em;
+}
+.nav-link{
+    color: #000 !important;
+    /* Primary Blue */
+}
+
+.nav-link:hover {
+    color: #84c190!important;
+    /* Primary Blue */
+}
+.avatar-text {
+    width: 40px; /* Size of the avatar */
+    height: 40px; /* Same as width to make it a circle */
+    background-color: #000; /* Background color for the avatar */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the div a circle */
+    font-size: 1.25em; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Ensure the letter is uppercase */
+}
+.navbar-text-in {
+    font-size: 1.25em; /* Larger font size */
+    color: black; /* Black color */
+    font-weight: bolder; /* Bold text */
+    margin-right: 2px; /* Space between name and profile image */
+    display: flex;
+    color: #84c140;
+    align-items: center;
+}
+
+/* Button Styles */
+.btn-create-account,
+.btn-login {
+    color: #000000;
+    border: none;
+    padding: 10px 20px; /* Adjusted padding for better size */
+    font-size: 1em;
+    border-radius: 20px; /* Rounded corners */
+    display: inline-flex; /* Changed to inline-flex to adjust to text size */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-create-account {
+    background-color: #84c140;
+}
+
+    .btn-create-account:hover {
+        background-color: #76ad37;
+        color: #ffffff;
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    }
+
+.btn-login {
+    background-color: #D3D3D3;
+    margin-right: 10px;
+}
+
+    .btn-login:hover {
+        background-color: #c0c0c0;
+        color: #ffffff;
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    }
+
+
+/* Footer Styles */
+.footer {
+    background-color: #c0c0c0; /* Gray background color */
+    color: #000000; /* Black text color */
+}
+.table-custom {
+    border: 1px solid #84c140;
+    color: #333;
+    
+}
+.col-amount {
+    width: 30%; /* Adjust this value as needed */
+}
+.table-custom th,
+.table-custom td {
+    padding: 60px; /* Adjust padding for better spacing */
+}
+
+    .table-custom thead {
+        background-color: #84c140;
+        color: white;
+    }
+
+    .table-custom tbody tr {
+        border-bottom: 1px solid #84c140;
+    }

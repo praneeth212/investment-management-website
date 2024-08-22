@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var isLoggedIn = TempData["IsLoggedIn"] as bool?;
+}
+<!-- Add Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Add Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<div class="container-fluid mt-4 p-0">
+    <!-- Background Image and Content Section -->
+    <div class="row no-gutters">
+        <div class="col-md-6 background-image-section d-flex align-items-center justify-content-center">
+            <!-- Background image is set via CSS -->
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="content text-center">
+                <h1 class="mb-4">Building a Brighter Tomorrow, Together. Invest with Ease.</h1>
+                <p class="mb-4 fs-5">Experience the Future of Investing, Now.</p>
+                <a href="#mutual-funds-section" style="text-decoration: none;" class="btn-create-account">Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill ml-2" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mutual Funds Section -->
+    <div id="mutual-funds-section" class="py-5 row no-gutters">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="content text-center">
+                <h1 class="mb-4">Ready to Invest? Let Us Simplify Mutual Funds for You.</h1>
+                <p class="mb-4 fs-5">Explore SIPs and Lump Sum Options, Tailored to Your Risk Preference—High, Moderate, or Low.</p>
+                <a style="text-decoration: none;" class="btn-create-account" asp-controller="MutualFunds" asp-action="Index">
+                    Mutual Funds & SIPs
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill ml-2" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 background-image-section1 d-flex align-items-center justify-content-center">
+            <!-- Background image is set via CSS -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="background: none; border: none;">
+                <div class="modal-header" style="border-bottom: none;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <a href="https://timesofindia.indiatimes.com/business/india-business/budget-2024-live-updates-nirmala-sitharaman-union-budget-2024-speech-highlights-and-announcement/liveblog/111957138.cms" target="_blank">
+                        <img src="https://www.masterstrokeonline.com/public/uploads/sales_presenter_pdf/1675249336.jpg" class="img-fluid" alt="Success Image" style="border-radius: 10px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Add jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var isLoggedIn = @Html.Raw(isLoggedIn.HasValue && isLoggedIn.Value ? "true" : "false");
+        if (isLoggedIn) {
+            $('#successModal').modal('show');
+        }
+    });
+</script>
+
+<style>
+    .background-image-section {
+        background: url('/assets/Investing-bro.png') no-repeat center center;
+        background-size: 110% 110%;
+        height: 80vh; /* Adjust height as needed */
+    }
+
+    .background-image-section1 {
+        background: url('/assets/Setup-Analytics-bro.png') no-repeat center center;
+        background-size: 110% 110%;
+        height: 80vh; /* Adjust height as needed */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .content {
+        text-align: center;
+        color: #333;
+    }
+
+    .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: transparent;
+        border: none;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+

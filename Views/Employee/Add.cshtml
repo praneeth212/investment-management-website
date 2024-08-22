@@ -1,0 +1,108 @@
+﻿@model Managament.Models.AddEmployeeViewModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+@* <h2 class="text-center">User Registration</h2> *@
+
+<style>
+    .btn-left-padding {
+        margin-left: 70px; /* Adjust the value as needed */
+    }
+</style>
+
+@using (Html.BeginForm(FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mt-3 shadow">
+                    <div class="card-header text-center">
+                        <h4>New Registration</h4>
+                    </div>
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", required = "required", type = "email" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", required = "required", type = "tel" } })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.Label("Pan_no", "PAN", htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Pan_no, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Pan_no, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                <input asp-for="Password" type="password" class="form-control" required />
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-4 fs-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            <div class="col-md-8 offset-md-4">
+                                <input type="submit" value="Register" class="btn-create-account btn-left-padding" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            <div class="col-md-8 offset-md-4">
+                                <p>
+                                    Already an existing user?
+                                    <a class="btn-login" style="text-decoration: none;" asp-controller="Account" asp-action="Login">
+                                        Go to Login
+                                        <svg style="margin-left: 0.4rem;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                        </svg>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

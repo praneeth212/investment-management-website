@@ -1,0 +1,102 @@
+﻿@using Managament.Models.Domain
+@model Managament.Models.InvestmentTransactionViewModel
+
+@{
+    ViewData["Title"] = "Create Investment";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-black" style="background-color: #84c140;">
+                    <h4 class="mb-0">Create Investment</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <!-- Hidden Field for hiding irrelevant info -->
+                        <input type="hidden" asp-for="MutualFundId" />
+                        <input type="hidden" asp-for="CustomerId" />
+
+                        <!-- Customer Name Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="CustomerName" class="control-label"></label>
+                            <input asp-for="CustomerName" class="form-control" readonly />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Mutual Fund Name Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="MutualFundName" class="control-label"></label>
+                            <input asp-for="MutualFundName" class="form-control" readonly />
+                            <span asp-validation-for="MutualFundName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Start Date Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="StartDate" class="control-label"></label>
+                            <input asp-for="StartDate" class="form-control" type="date" />
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+
+                        <!-- Investment Type Field -->
+                        <div class="form-group mb-3">
+                            <label asp-for="InvestmentType" class="control-label"></label>
+                            <select asp-for="InvestmentType" class="form-control" id="investmentType">
+                                @foreach (var type in Enum.GetValues(typeof(InvestmentType)))
+                                {
+                                    <option value="@type">@type</option>
+                                }
+                            </select>
+                            <span asp-validation-for="InvestmentType" class="text-danger"></span>
+                        </div>
+
+                        <!-- Frequency Field -->
+                        <div class="form-group mb-3" id="frequencyField">
+                            <label asp-for="Frequency" class="control-label"></label>
+                            <select asp-for="Frequency" class="form-control">
+                                @foreach (var frequency in Enum.GetValues(typeof(Frequency)))
+                                {
+                                    <option value="@frequency">@frequency</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Frequency" class="text-danger"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group text-center">
+                            <input type="submit" value="Create" class="btn-create-account" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var investmentTypeSelect = document.getElementById('investmentType');
+            var frequencyField = document.getElementById('frequencyField');
+
+            function toggleFrequencyField() {
+                if (investmentTypeSelect.value === 'SIP') {
+                    frequencyField.style.display = 'block';
+                } else {
+                    frequencyField.style.display = 'none';
+                }
+            }
+
+            // Initial check on page load
+            toggleFrequencyField();
+
+            // Event listener for changes in InvestmentType
+            investmentTypeSelect.addEventListener('change', toggleFrequencyField);
+        });
+    </script>
+}

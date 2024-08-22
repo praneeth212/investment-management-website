@@ -1,0 +1,154 @@
+﻿@model IEnumerable<Managament.Models.Domain.MutualFund>
+
+@{
+    ViewData["Title"] = "Mutual Funds";
+    var selectedRiskAssessment = ViewBag.SelectedRiskAssessment as string;
+    var currentSort = ViewBag.CurrentSort as string;
+}
+
+<div class="container" style="margin-top: 3rem">
+    <h2 class="mb-4">Mutual Funds</h2>
+    <form asp-controller="MutualFunds" asp-action="Index" method="get" class="mb-4">
+        <div class="form-group row align-items-center">
+            <label for="riskAssessment" class="col-form-label col-sm-2 fs-5">Filter by Risk:</label>
+            <div class="col-sm-3">
+                <select id="riskAssessment" name="riskAssessment" class="form-control form-control-md">
+                    <option value="">--All Risks--</option>
+                    <option value="High">High</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn-create-account">
+                    <svg style="margin-right: 0.4rem;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                    </svg> Filter
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="d-flex align-items-center mb-4">
+        <span class="mr-3 fs-5">Sort By:</span>
+
+        <a asp-controller="MutualFunds" asp-action="Index"
+           asp-route-riskAssessment="@selectedRiskAssessment"
+           asp-route-sortOrder="@ViewBag.NameSortParm"
+           class="btn-create-account d-flex align-items-center mr-3"
+           style="text-decoration: none;">
+            Name
+            @if (currentSort == "name_desc")
+            {
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-sort-alpha-down-alt ml-1" viewBox="0 0 16 16">
+                    <path d="M12.96 7H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645z" />
+                    <path fill-rule="evenodd" d="M10.082 12.629 9.664 14H8.598l1.789-5.332h1.234L13.402 14h-1.12l-.419-1.371zm1.57-.785L11 9.688h-.047l-.652 2.156z" />
+                    <path d="M4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293z" />
+                </svg>
+            }
+            else
+            {
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-sort-alpha-down ml-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.082 5.629 9.664 7H8.598l1.789-5.332h1.234L13.402 7h-1.12l-.419-1.371zm1.57-.785L11 2.687h-.047l-.652 2.157z" />
+                    <path d="M12.96 14H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293z" />
+                </svg>
+            }
+        </a>
+
+        <a asp-controller="MutualFunds" asp-action="Index"
+           asp-route-riskAssessment="@selectedRiskAssessment"
+           asp-route-sortOrder="@ViewBag.RiskSortParm"
+           class="btn-create-account d-flex align-items-center"
+           style="text-decoration: none;">
+            Risk
+            @if (currentSort == "risk_desc")
+            {
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-sort-down-alt ml-1" viewBox="0 0 16 16">
+                    <path d="M3.5 3.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 12.293zm4 .5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5" />
+                </svg>
+            }
+            else
+            {
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-sort-down ml-1" viewBox="0 0 16 16">
+                    <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
+                </svg>
+            }
+        </a>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">
+                            <span class="font-weight-bold">Risk:</span>
+                            <span class="ml-2">@item.Risk</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="font-weight-bold">Type:</span>
+                            <span class="ml-2">@item.Type</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="font-weight-bold">Minimum Investment:</span>
+                            <span class="ml-2">@item.MinimumInvestment</span>
+                        </p>
+                        <p class="card-text">
+                            <span class="font-weight-bold">Exit Load:</span>
+                            <span class="ml-2">@item.ExitLoad%</span>
+                        </p>
+                        <p class="card-text">@item.Description</p>
+                        <a style="text-decoration: none;" asp-controller="MutualFunds" asp-action="Details" asp-route-id="@item.MutualFundId" class="btn-create-account">Details</a>
+                        <a style="text-decoration: none;" asp-controller="Fund" asp-action="Index" asp-route-id="@item.MutualFundId" class="btn-create-account">Performance</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Add Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Add custom styles for the cards -->
+<style>
+
+    .btn-primary {
+        background-color: #84c140;
+        border-color: #84c140;
+    }
+
+        .btn-primary:hover {
+            background-color: #6da831;
+            border-color: #6da831;
+        }
+
+    /* Card Styles*/
+
+    .card {
+        border: 5px solid #ddd; /* Light border to distinguish cards */
+        border-radius: 0.5rem; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and transform transition */
+    }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+            transform: translateY(-8px); /* Lift the card slightly */
+        }
+
+    .card-body {
+        padding: 1.25rem; /* Add padding inside the card */
+    }
+
+    .card-title {
+        color: #333333; /* Darker color for visibility */
+        font-size: 1.5rem; /* Larger font size */
+        font-weight: 700; /* Bold font weight */
+        margin-bottom: 1rem; /* Space below the title */
+        border-bottom: 2px solid #84c140; /* Underline effect with primary color */
+        padding-bottom: 0.5rem; /* Padding below the title */
+    }
+</style>

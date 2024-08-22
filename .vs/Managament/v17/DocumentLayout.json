@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\investments\\redeem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\investments\\redeem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\investments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\investments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\fund\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\fund\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\investments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\investments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/Vinay_ins_SQLEXPRESS/NewDb/True/SqlTable/dbo.SupportRequests.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/Vinay_ins_SQLEXPRESS/NewDb/True/SqlTable/dbo.Customers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\services\\sipreminderscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:services\\sipreminderscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|c:\\users\\localuser\\downloads\\managament (final draft 1)\\managament (investments, dashboard)\\managament (mf, home)\\managament\\managament\\managament\\views\\support\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BDB2C8D-E553-4642-9CE3-C40BED5BDEF8}|Managament.csproj|solutionrelative:views\\support\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Redeem.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Redeem.cshtml",
+              "RelativeDocumentMoniker": "Views\\Investments\\Redeem.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Redeem.cshtml",
+              "RelativeToolTip": "Views\\Investments\\Redeem.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAIwCsAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:36:16.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Investments\\Create.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Create.cshtml",
+              "RelativeToolTip": "Views\\Investments\\Create.cshtml",
+              "ViewState": "AQIAAE0AAAAAIDMzMzPbvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:35:26.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Fund\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Fund\\Index.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Fund\\Index.cshtml",
+              "RelativeToolTip": "Views\\Fund\\Index.cshtml",
+              "ViewState": "AQIAADIAAADAmZmZmVkqwAwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:32:57.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Investments\\Index.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Investments\\Index.cshtml",
+              "RelativeToolTip": "Views\\Investments\\Index.cshtml",
+              "ViewState": "AQIAACkAAADAMzMzM3MkwDoAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:17:33.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.SupportRequests [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/Vinay_ins_SQLEXPRESS/NewDb/True/SqlTable/dbo.SupportRequests.sql",
+              "ToolTip": "dbo.SupportRequests [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-08T14:15:26.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.Customers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/Vinay_ins_SQLEXPRESS/NewDb/True/SqlTable/dbo.Customers.sql",
+              "ToolTip": "dbo.Customers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-08T14:14:23.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SipReminderScheduler.cs",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Services\\SipReminderScheduler.cs",
+              "RelativeDocumentMoniker": "Services\\SipReminderScheduler.cs",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Services\\SipReminderScheduler.cs",
+              "RelativeToolTip": "Services\\SipReminderScheduler.cs",
+              "ViewState": "AQIAACUAAACAnJmZmRkdwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T14:09:59.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAWwCoAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:06:25.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Support\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Support\\Create.cshtml",
+              "ToolTip": "C:\\Users\\localuser\\Downloads\\Managament (Final Draft 1)\\Managament (Investments, Dashboard)\\Managament (MF, Home)\\Managament\\Managament\\Managament\\Views\\Support\\Create.cshtml",
+              "RelativeToolTip": "Views\\Support\\Create.cshtml",
+              "ViewState": "AQIAAHEAAAAAmZmZmdkhwBIAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-08T14:06:08.007Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

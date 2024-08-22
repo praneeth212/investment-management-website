@@ -1,0 +1,118 @@
+﻿@model RedeemViewModel
+
+@{
+    ViewData["Title"] = "Redeem Investment";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Redeem" method="post" class="p-4 border rounded bg-light shadow-sm custom-form">
+                @Html.AntiForgeryToken()
+
+                <!-- Form Title -->
+                <h3 class="text-center" style="color: #84c140;">Redeem Investment</h3>
+
+                <div class="form-group">
+                    <input asp-for="InvestmentId" type="hidden" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UnitsOwned" class="control-label custom-form-label">Units Owned</label>
+                    <input asp-for="UnitsOwned" id="unitsOwned" class="form-control" readonly />
+                    <span asp-validation-for="UnitsOwned" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ExitLoadPercentage" class="control-label custom-form-label">Exit Load Percentage</label>
+                    <input asp-for="ExitLoadPercentage" id="exitLoadPercentage" class="form-control" readonly />
+                    <span asp-validation-for="ExitLoadPercentage" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UnitsToRedeem" class="control-label custom-form-label">Units to Redeem</label>
+                    <input asp-for="UnitsToRedeem" id="unitsToRedeem" class="form-control" oninput="calculateRedemption()" />
+                    <span asp-validation-for="UnitsToRedeem" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label custom-form-label">Estimated Redemption Amount</label>
+                    <div id="redemptionAmount" class="form-control bg-white"></div>
+                </div>
+
+                <br />
+                <button type="submit" class="btn btn-create-account ">Redeem</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Get values from model
+        const latestNavValue = @Model.LatestNavValue; // The latest NAV value from the model
+        const exitLoadPercentage = parseFloat(document.getElementById('exitLoadPercentage').value);
+
+        function calculateRedemption() {
+            const unitsToRedeem = parseFloat(document.getElementById('unitsToRedeem').value);
+            const unitsOwned = parseFloat(document.getElementById('unitsOwned').value);
+
+            // Check if values are valid
+            if (isNaN(unitsToRedeem) || unitsToRedeem <= 0 || unitsToRedeem > unitsOwned) {
+                document.getElementById('redemptionAmount').innerText = "Invalid units to redeem.";
+                return;
+            }
+
+            let redemptionAmount = unitsToRedeem * latestNavValue;
+
+            // Apply exit load if applicable
+            const transactionDate = new Date(); // This should be replaced with actual transaction date if available
+            const currentDate = new Date();
+            const daysElapsed = (currentDate - transactionDate) / (1000 * 60 * 60 * 24);
+            const exitLoadApplicable = daysElapsed < 365;
+
+            if (exitLoadApplicable) {
+                redemptionAmount *= (1 + exitLoadPercentage / 100);
+            }
+
+            document.getElementById('redemptionAmount').innerText = `${redemptionAmount.toFixed(2)}`;
+        }
+
+        // Initialize with current values
+        calculateRedemption();
+    </script>
+}
+
+<style>
+    .custom-form {
+        background-color: #f9f9f9; /* Light background for form */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 20px; /* Padding inside the form */
+    }
+
+    .custom-form-label {
+        font-weight: bold;
+        color: #333; /* Darker color for labels */
+    }
+
+    .btn-redeem {
+        background-color: #84c140; /* Background color for button */
+        border-color: #84c140; /* Border color for button */
+        color: #fff; /* Text color for button */
+        padding: 10px 20px; /* Padding inside button */
+        font-size: 1rem; /* Font size */
+        border-radius: 5px; /* Rounded corners */
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        .btn-redeem:hover {
+            background-color: #84c140; /* Maintain background color on hover */
+            border-color: #84c140; /* Maintain border color on hover */
+            color: #fff; /* Maintain text color on hover */
+            cursor: pointer;
+            opacity: 1; /* Ensure no transparency effect */
+        }
+</style>
